@@ -21,3 +21,7 @@ Once you have Multipass VM's created, then install docker and/or kubernetes insi
 
 Background on Docker Machine depreciation
 docker-machine which was used to create VMs with docker pre-installed. The last release from 2019 is archived on github. There isn't anything wrong with docker machine, Docker simply shifted focus from creating virtual machines. Today there are better alternatives like multipass. For the course, you can still choose to use docker-machine but multipass is the best option. You can see me discuss multipass on my live show.
+
+
+## PROBLEM WITH LOGIN ONLY WITH ROOT
+https://github.com/canonical/multipass/issues/1437
