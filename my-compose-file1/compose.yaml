@@ -1,8 +1,6 @@
-# create your drupal and postgres config here, based off the last assignment
 services:
-  custom-drupal:
-    image: custom-drupal
-    build: .
+  drupal:
+    image: drupal:10.0.8
     ports:
       - "8080:80"
     networks:
@@ -20,27 +18,20 @@ services:
       - type: volume
         source: drupal-themes
         target: /var/www/html/themes
-      - type: volume
-        source: drupal-data
-        target: /var/lib/postgresql/data
-
-  mariadb:
-    image: mariadb:10.11
+  postgres:
+    image: postgres:15.2
     environment:
-      - MARIADB_DATABASE=drupal
-      - MARIADB_USER=user
-      - MARIADB_PASSWORD=pass
-      - MARIADB_ROOT_PASSWORD=pass
+      - POSTGRES_DB=drupal
+      - POSTGRES_USER=user
+      - POSTGRES_PASSWORD=pass
     networks:
       - halnetwork
 
 networks:
-  halnetwork:
+   halnetwork:
 
 volumes:
   drupal-modules:
   drupal-profiles:
   drupal-sites:
   drupal-themes:
-  drupal-data:
-

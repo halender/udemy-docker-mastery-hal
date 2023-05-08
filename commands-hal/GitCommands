@@ -1,0 +1,18 @@
+## Create a local branch and connected to the remote branch
+git checkout -b [branch] [remotename]/[branch]    ------>     git checkout --track origin/daves_branch
+
+## This Git command will show you remote branches. The -r flag here is short for --remotes.
+ git branch -r
+ 
+
+ ## If the branch was created manually in local and the we create the branch in github, this is the command to connect both
+
+ git push --set-upstream origin task01
+
+ ## If the branch was created manually in local and the we create the branch in github, this is the command to connect both
+##local create 
+ git checkout -b <branch-name>
+
+ ##push the current branch in local and create to remote (normal origin) and the name for this new origin branch
+ git push <remote-name> <branch-name> 
+ git push origin task01
